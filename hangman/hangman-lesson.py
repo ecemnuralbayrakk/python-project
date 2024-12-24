@@ -1,5 +1,6 @@
-import urllib.request
 import random
+import urllib.request
+
 
 def get_word():
     word_url = "https://www.mit.edu/~ecprice/wordlist.10000"
@@ -8,15 +9,17 @@ def get_word():
     words = long_txt.splitlines()
     return random.choice(words)
 
+
 def letters(word, correct_guesses):
     display_word = []
     for letter in word:
         if letter in correct_guesses:
-            display_word.append(letter)  
+            display_word.append(letter)
         else:
-            display_word.append("_")  
+            display_word.append("_")
 
     print(" ".join(display_word))
+
 
 def guess(word):
     wrong_guesses = 0
@@ -44,21 +47,24 @@ def guess(word):
             print("You win! The word was:", word)
             break
 
-        print("You have {} wrong guesses left.".format(6 - wrong_guesses))
-    
+        print(f"You have {6 - wrong_guesses} wrong guesses left.")
+
     if wrong_guesses == 6:
         print("You lose! The word was:", word)
 
+
 def play_hangman(word):
     print("Welcome to Hangman!")
-    print("The word has {} letters.".format(len(word)))
+    print(f"The word has {len(word)} letters.")
     print("Press Enter to start guessing.")
-    input() 
+    input()
     guess(word)
+
 
 def main():
     word = get_word()
     play_hangman(word)
+
 
 if __name__ == "__main__":
     main()

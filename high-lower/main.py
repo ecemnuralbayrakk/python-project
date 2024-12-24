@@ -1,6 +1,7 @@
 from random import randint
-from game_data import data
+
 from art import logo, vs
+from game_data import data
 
 
 def random_choice():
@@ -11,8 +12,7 @@ def random_choice():
 def compare(first, second):
     if first["follower_count"] > second["follower_count"]:
         return "A"
-    else:
-        return "B"
+    return "B"
 
 
 def play():
@@ -21,14 +21,14 @@ def play():
     while True:
         print(logo)
         print(
-            f"Against A: {first['name']}, a {first['description']} from {first['country']}"
+            f"Against A: {first['name']}, a {first['description']} from {first['country']}",
         )
         print(vs)
         second = random_choice()
         if first == second:
             second = random_choice()
         print(
-            f"Against B: {second['name']}, a {second['description']} from {second['country']}"
+            f"Against B: {second['name']}, a {second['description']} from {second['country']}",
         )
         user_choice = input("Who has more followers? Type 'A' or 'B': ").upper()
         if user_choice == compare(first, second):

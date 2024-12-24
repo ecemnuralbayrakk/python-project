@@ -2,8 +2,8 @@ import art
 
 print(art.logo)
 total = {}
-'''example = {"a": 4, "b": 3, "c": 2, "d": 1}
-print(max(example, key=example.get))  # a'''
+"""example = {"a": 4, "b": 3, "c": 2, "d": 1}
+print(max(example, key=example.get))  # a"""
 while True:
     total = {input("What is your name?: "): input("What is your bid?: $")}
     answer = input("Are there any other bidders? Type 'yes or 'no'.")
@@ -17,4 +17,3 @@ while True:
 
     else:
         print("\n" * 20)
-

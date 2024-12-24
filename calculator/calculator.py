@@ -14,11 +14,12 @@ def subtract(n1, n2):
 
 
 def divide(n1, n2):
+    if n2 == 0:
+        return "Can't divide by 0"
     return n1 / n2
 
 
 def get_key(val):
-
     for key, value in choice.items():
         if val == value:
             return key
@@ -32,18 +33,14 @@ while True:
     print(art.logo)
 
     num1 = int(input("What's the first number?:"))
-    operation = input(
-        """ +
- - 
- *
- /
- Pick an operation:"""
-    )
+
+    operations = ["+", "-", "*", "/"]
+    operation = input(f"{'\n'.join(operations)}\n Pick an operation:")
     num2 = int(input("What's the next number?:"))
     answer = choice[operation](num1, num2)
 
     return_answer = input(
-        "Type 'y' to continue calculating with 90.0, or type 'n' to start a new calculation:"
+        f"Type 'y' to continue calculating with {answer}, or type 'n' to start a new calculation:",
     )
 
     if return_answer == "y":
@@ -53,13 +50,13 @@ while True:
 -
 *
 /
-Pick an operation:"""
+Pick an operation:""",
             )
             num2 = int(input("What's the next number?:"))
             answer = choice[operation](answer, num2)
 
             return_answer = input(
-                f"Type 'y' to continue calculating with {answer}, or type 'n' to start a new calculation:"
+                f"Type 'y' to continue calculating with {answer}, or type 'n' to start a new calculation:",
             )
             if return_answer == "n":
                 print(answer)

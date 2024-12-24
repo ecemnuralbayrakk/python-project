@@ -1,4 +1,5 @@
 import random
+
 from art import logo
 
 
@@ -10,11 +11,10 @@ def return_prompt(number, predict):
     if number > predict:
         print(f"{predict} is too high.{number}")
         return "Too high."
-    elif number < predict:
+    if number < predict:
         print(f"{predict} is too low.{number}")
         return "Too low."
-    else:
-        return f"You got it! The answer was {number}"
+    return f"You got it! The answer was {number}"
 
 
 def play_game():

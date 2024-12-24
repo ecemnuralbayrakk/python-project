@@ -1,4 +1,5 @@
 import random
+
 import art
 
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
@@ -10,17 +11,17 @@ def score(user_cards, computer_cards):
         print(f"Your cards: {user_cards}, final score: {sum(user_cards)}")
         print(f"Computer's cards: {computer_cards}, final score: {sum(computer_cards)}")
         return
-    elif sum(computer_cards) > 21:
+    if sum(computer_cards) > 21:
         print("Computer went over. You win!")
         print(f"Your cards: {user_cards}, final score: {sum(user_cards)}")
         print(f"Computer's cards: {computer_cards}, final score: {sum(computer_cards)}")
         return
-    elif sum(user_cards) > 21:
+    if sum(user_cards) > 21:
         print("You went over. You lose")
         print(f"Your cards: {user_cards}, final score: {sum(user_cards)}")
         print(f"Computer's cards: {computer_cards}, final score: {sum(computer_cards)}")
         return
-    elif sum(computer_cards) > sum(user_cards):
+    if sum(computer_cards) > sum(user_cards):
         print("You lose")
         print(f"Your cards: {user_cards}, final score: {sum(user_cards)}")
         print(f"Computer's cards: {computer_cards}, final score: {sum(computer_cards)}")
